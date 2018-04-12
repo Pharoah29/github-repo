@@ -1,0 +1,23 @@
+
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-xs-6 p-2">
+        <h1>Bookmarks</h1>
+    </div>
+     
+  </div>
+  
+    <div class="row text-center text-lg-left">
+      
+      <div class="col-lg-3 col-md-4 col-xs-6 p-2" ng-repeat="item in ctrl.storage">
+              <div class="card">
+                      <img class="card-img-top" style="text-align:center;" ng-src="{{item.owner.avatar_url}}" alt="image">
+                      <div class="card-body">
+                        <h4 class="card-title">{{item.name}}</h4>
+                        <p class="card-text">{{item.description}}</p>
+                      </div>
+              </div>
+        </div> 
+    
+    </div>
+   

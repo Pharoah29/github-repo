@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Github Repo Gallery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="app.js"></script>
+
+    <!-- Custom styles for this page -->
+    <style>
+        .row {padding-top:4rem}
+    </style>
+
+  </head>
+
+  <body ng-app="repoApp" ng-controller="repoController as ctrl">
+
+    <!-- Navigation -->
+    <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+              <a class="navbar-brand" href="#" ng-click="ctrl.repoItems = null; ctrl.searchQuery = null">Github Repo Gallery</a>
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+           
+              <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Gallery<span class="sr-only">(current)</span></a>
+                  </li>
+             
+                  <li class="nav-item">
+                    <a class="nav-link" href="#!bookmarks" ng-click="ctrl.getBookmarks()">Bookmarks</a>
+                  </li>
+              
+                </ul>
+                <div class="form-inline mt-2 mt-md-0">
+                  <input class="form-control mr-sm-2" type="text" ng-model="ctrl.searchQuery" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-success my-2 my-sm-0" ng-click="ctrl.search()">Search</button>
+                </div>
+            </div>
+            
+            </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div ng-view></div>
+
+    </div>
+    <!-- /.container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>

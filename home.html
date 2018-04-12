@@ -1,0 +1,27 @@
+
+<div class="row" ng-if="!ctrl.searchQuery">
+    <div class="jumbotron">
+      <h1>Hello</h1> 
+      <p class="lead">This page will show a list gallery of <strong>20</strong> selected Github repoositories</p>
+      <p>You will be able to control the amount of repos showing from within the angular controller, by changing the {itemCount} parameter</p>
+      <p>You can also check the Boomarks section after bookmarking an item from the gallery to view the stored Session list</p>
+      <p>Please type a keyword and hit the search button to start</p>
+     
+    </div>
+  </div>
+
+    <div class="row text-center text-lg-left" ng-if="ctrl.searchQuery">
+      
+      <div class="col-lg-3 col-md-4 col-xs-6 p-2" ng-repeat="item in ctrl.repoItems">
+              <div class="card">
+                      <img class="card-img-top" style="text-align:center;" ng-src="{{item.owner.avatar_url}}" alt="image">
+                      <div class="card-body">
+                        <h4 class="card-title">{{item.name}}</h4>
+                        <p class="card-text">{{item.description}}</p>
+                        <a href="javascript:void(0)" class="btn btn-primary" ng-click="ctrl.bookmark(item)">Bookmark</a>
+                      </div>
+              </div>
+        </div> 
+    
+    </div>
+   
